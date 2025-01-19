@@ -123,14 +123,14 @@ canvas#networkCanvas {
     bottom: 20px;
     right: 20px;
     width: 300px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
     z-index: 1000;
 }
 
 .chatbot-header {
-    background-color: #007bff;
+    background-color: #e74c3c;
     color: white;
     padding: 10px;
     border-radius: 10px 10px 0 0;
@@ -151,9 +151,10 @@ canvas#networkCanvas {
 .chat-container {
     display: none;
     height: 400px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(231, 76, 60, 0.3);
     border-top: none;
     border-radius: 0 0 10px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .chat-messages {
@@ -170,13 +171,14 @@ canvas#networkCanvas {
 }
 
 .message.user {
-    background-color: #e9ecef;
+    background-color: rgba(231, 76, 60, 0.1);
     margin-left: auto;
-    color: #000;
+    color: white;
+    border: 1px solid rgba(231, 76, 60, 0.3);
 }
 
 .message.bot {
-    background-color: #007bff;
+    background-color: #e74c3c;
     color: white;
     margin-right: auto;
 }
@@ -190,36 +192,39 @@ canvas#networkCanvas {
 .chat-input input {
     flex: 1;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #e74c3c;
     border-radius: 5px;
     margin-right: 5px;
-    color: #000;
-    background-color: #fff;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.chat-input input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .chat-input button {
     padding: 8px 15px;
-    background-color: #007bff;
+    background-color: #e74c3c;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .chat-input button:hover {
-    background-color: #0056b3;
+    background-color: #d44637;
 }
 
 .qr-code {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
+    position: static;
     background: white;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
-    z-index: 1000;
     text-align: center;
+    margin-top: 20px;
 }
 
 .qr-code-container {
@@ -274,5 +279,21 @@ canvas#networkCanvas {
     
     .investigator {
         max-width: 200px;
+    }
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 0.5;
+}
+
+/* Ajuster le responsive */
+@media (max-width: 768px) {
+    .center-content {
+        order: -1;
+        margin: 20px 0;
     }
 } 

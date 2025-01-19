@@ -29,9 +29,17 @@
                 </ul>
             </div>
 
-            <!-- Ajout de l'image de l'investigateur -->
-            <div class="investigator-image">
-                <img src="./images/investigator.png" alt="Investigateur professionnel" class="investigator">
+            <div class="center-content">
+                <!-- Image de l'investigateur -->
+                <div class="investigator-image">
+                    <img src="./images/investigator.png" alt="Investigateur professionnel" class="investigator">
+                </div>
+
+                <!-- QR code déplacé ici -->
+                <div class="qr-code">
+                    <div id="qrcode" class="qr-code-container"></div>
+                    <div class="qr-code-text">امسح الرمز للوصول إلى الموقع</div>
+                </div>
             </div>
 
             <div class="left-section">
@@ -66,12 +74,6 @@
                 <button onclick="sendMessage()">إرسال</button>
             </div>
         </div>
-    </div>
-
-    <!-- Modifiez la div du QR code -->
-    <div class="qr-code">
-        <div id="qrcode" class="qr-code-container"></div>
-        <div class="qr-code-text">امسح الرمز للوصول إلى الموقع</div>
     </div>
 
     <script src="./network.js"></script>
