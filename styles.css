@@ -241,4 +241,38 @@ canvas#networkCanvas {
     .qr-code {
         bottom: 100px;
     }
+}
+
+/* Style pour le conteneur de l'image */
+.investigator-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    flex: 0.5;
+}
+
+/* Style pour l'image */
+.investigator {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.investigator:hover {
+    transform: scale(1.05);
+}
+
+/* Ajustement pour le responsive */
+@media (max-width: 768px) {
+    .investigator-image {
+        margin: 20px 0;
+        order: -1; /* Place l'image en haut en mode mobile */
+    }
+    
+    .investigator {
+        max-width: 200px;
+    }
 } 
