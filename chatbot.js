@@ -140,7 +140,11 @@ function getBotResponse(message) {
             '1. DeepWare.ai - Pour les vidéos\n' +
             '2. FotoForensics - Pour les images\n' +
             '3. Veritone - Pour l\'audio\n' +
-            'Voulez-vous des détails sur un outil en particulier?'
+            'Voulez-vous des détails sur un outil en particulier?',
+
+        // Modification de la réponse pour "merci"
+        'merci': 'Je vous en prie!',
+        'شكرا': 'عفواً!'
     };
 
     // Convertir le message en minuscules pour la recherche
