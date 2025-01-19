@@ -169,12 +169,13 @@ canvas#networkCanvas {
     max-width: 80%;
 }
 
-.user {
+.message.user {
     background-color: #e9ecef;
     margin-left: auto;
+    color: #000;
 }
 
-.bot {
+.message.bot {
     background-color: #007bff;
     color: white;
     margin-right: auto;
@@ -192,6 +193,8 @@ canvas#networkCanvas {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 5px;
+    color: #000;
+    background-color: #fff;
 }
 
 .chat-input button {
