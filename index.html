@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل المحقق في الجرائم المدعومة بالذكاء الاصطناعي</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+    <canvas id="networkCanvas"></canvas>
+    <div class="container">
+        <div class="header-container">
+            <img src="./images/logo-ministere.png" alt="وزارة الداخلية" class="logo">
+            <h1 class="main-title">دليل المحقق في الجرائم المدعومة بالذكاء الاصطناعي</h1>
+            <img src="./images/logo-ecole.png" alt="المدرسة الوطنية لتكوين الإطارات" class="logo">
+        </div>
+        
+        <div class="content">
+            <div class="right-section">
+                <h2>وسائل خاصة للذكاء الاصطناعي</h2>
+                <ul>
+                    <li>تغيير محتوى صورة</li>
+                    <li>استبدال صور الوجوه</li>
+                    <li>تغيير محتوى فيديو DEEP FAKE</li>
+                    <li>تغيير صوت</li>
+                    <li>دمج الأصوات CLONNAGE VOIX</li>
+                </ul>
+            </div>
+
+            <div class="left-section">
+                <h2>معالجة الوثائق المشبوهة</h2>
+                <ul>
+                    <li>التثبت من تزييف وثيقة</li>
+                    <li>التثبت من تفخيخ وثيقة بفيروسات</li>
+                    <li>التثبت من تزييف فيديو DEEP FAKE</li>
+                    <li>التثبت من تزييف مقطع صوتي DEEP VOICE</li>
+                    <li>التثبت من تزييف صورة</li>
+                    <li>تغيير صوت</li>
+                    <li>دمج الأصوات CLONNAGE VOIX</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ajout du chatbot -->
+    <div class="chatbot">
+        <div class="chatbot-header" onclick="toggleChat()">
+            <span>زميلك الرقمي</span>
+            <button class="toggle-btn">▼</button>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    مرحباً! أنا زميلك الرقمي، كيف يمكنني مساعدتك؟
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="اكتب رسالتك هنا...">
+                <button onclick="sendMessage()">إرسال</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modifiez la div du QR code -->
+    <div class="qr-code">
+        <div id="qrcode" class="qr-code-container"></div>
+        <div class="qr-code-text">امسح الرمز للوصول إلى الموقع</div>
+    </div>
+
+    <script src="network.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</body>
+</html> 
