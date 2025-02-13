@@ -1,0 +1,30 @@
+{
+  "name": "outilsia",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "description": "Application web pour les outils d'investigation basés sur l'IA",
+  "keywords": [
+    "IA",
+    "investigation",
+    "outils",
+    "deepfake"
+  ],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agent10111/outilsia.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Agent10111/outilsia/issues"
+  },
+  "homepage": "https://github.com/Agent10111/outilsia#readme"
+}
