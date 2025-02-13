@@ -76,8 +76,79 @@
         </div>
     </div>
 
+    <script>
+        // Vérification de la connexion
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Fonction de déconnexion
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <button onclick="logout()" style="position: fixed; top: 10px; right: 10px;">تسجيل الخروج</button>
+
     <script src="./network.js"></script>
     <script src="./chatbot.js"></script>
     <script src="./qr-generator.js"></script>
+
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const message = userInput.value.trim();
+            
+            if (message === '') return;
+            
+            // Afficher le message de l'utilisateur
+            appendMessage('user', message);
+            userInput.value = '';
+
+            try {
+                // Afficher l'indicateur de chargement
+                appendMessage('bot', '... جاري التحميل');
+                
+                // Appel à l'API
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+
+                const data = await response.json();
+                
+                // Supprimer le message de chargement
+                const loadingMessage = document.querySelector('.message.bot:last-child');
+                if (loadingMessage) {
+                    loadingMessage.remove();
+                }
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                // Afficher la réponse du chatbot
+                appendMessage('bot', data.message);
+                
+            } catch (error) {
+                console.error('Erreur:', error);
+                appendMessage('bot', 'عذراً، حدث خطأ في المعالجة. يرجى المحاولة مرة أخرى.');
+            }
+        }
+
+        // Fonction pour ajouter un message à la conversation
+        function appendMessage(sender, message) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.textContent = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    </script>
 </body>
 </html> 
