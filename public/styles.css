@@ -124,7 +124,7 @@ canvas#networkCanvas {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 300px;
+    width: 400px;
     background-color: #1a1a2e;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -153,11 +153,12 @@ canvas#networkCanvas {
 
 .chat-container {
     display: none;
-    height: 400px;
+    height: 600px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-top: none;
     border-radius: 0 0 10px 10px;
     background-color: #1a1a2e;
+    overflow: hidden;
 }
 
 .chat-messages {
